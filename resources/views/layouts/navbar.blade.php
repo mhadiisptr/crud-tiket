@@ -49,8 +49,7 @@
                 </div>
             </div>
             <div>
-                <div class="small text-gray-500">18 Januari 2023</div>
-                <span class="font-weight-bold">Selamat Datang Kembali Hadi!</span>
+                <span class="font-weight-bold">Selamat Datang Kembali!</span>
             </div>
             </a>
         </li>
@@ -71,18 +70,6 @@
         </a>
         <!-- Dropdown - User Information -->
         <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-            <a class="dropdown-item" href="#">
-            <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-            Profile
-            </a>
-            <a class="dropdown-item" href="#">
-            <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-            Settings
-            </a>
-            <a class="dropdown-item" href="#">
-            <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-            Activity Log
-            </a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="{{ route('logout') }}">
             <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
