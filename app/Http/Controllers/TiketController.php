@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Tiket;
 use Illuminate\Http\Request;
+use App\Models\Kategori;
 use Illuminate\Support\Facades\DB;
 
 class TiketController extends Controller
@@ -16,14 +17,16 @@ class TiketController extends Controller
 
     public function tambah()
     {
-        return view('tiket.form');
+        $kategori = Kategori::get();
+
+		return view('tiket.form', ['kategori' => $kategori]);
     }
 
     public function simpan(Request $request)
     {
         echo $request->kode_tiket;
         echo $request->judul_film;
-        echo $request->kategori_film;
+        echo $request->id_kategori;
         echo $request->nomor_kursi;
         echo $request->jumlah_tiket;
         echo $request->harga;
@@ -31,8 +34,8 @@ class TiketController extends Controller
         
         DB::table('tiket')->insert([
             'kode_tiket'            => $request->kode_tiket,
-            'judul_film'           => $request->judul_film,
-            'kategori_film'         => $request->kategori_film,
+            'judul_film'            => $request->judul_film,
+            'id_kategori'           => $request->id_kategori,
             'nomor_kursi'           => $request->nomor_kursi,
             'jumlah_tiket'          => $request->jumlah_tiket,
             'harga'                 => $request->harga,
@@ -47,8 +50,9 @@ class TiketController extends Controller
     public function edit($id)
     {
         $tiket = Tiket::find($id);
+        $kategori = Kategori::get();
 
-        return view('tiket.form', ['tiket' => $tiket]);
+        return view('tiket.form', ['tiket' => $tiket, 'kategori' => $kategori]);
     }
 
     public function update($id, Request $request)
@@ -56,7 +60,7 @@ class TiketController extends Controller
         $update = DB::table('tiket')->where('id', '=', $id)->update([
             'kode_tiket'            => $request->kode_tiket,
             'judul_film'           => $request->judul_film,
-            'kategori_film'         => $request->kategori_film,
+            'id_kategori'         => $request->id_kategori,
             'nomor_kursi'           => $request->nomor_kursi,
             'jumlah_tiket'          => $request->jumlah_tiket,
             'harga'                 => $request->harga,

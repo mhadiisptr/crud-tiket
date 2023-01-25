@@ -2,8 +2,7 @@
 use App\Http\Controllers\TiketController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
-
-
+use App\Http\Controllers\KategoriController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,6 +44,15 @@ Route::get('/', function () {
       Route::post('edit/{id}', 'update')->name('tiket.tambah.update');
       Route::get('hapus/{id}', 'hapus')->name('tiket.hapus');
     });
+
+    Route::controller(KategoriController::class)->prefix('kategori')->group(function(){
+      Route::get('', 'index')->name('kategori');
+      Route::get('tambah', 'tambah')->name('kategori.tambah');
+      Route::post('tambah', 'simpan')->name('kategori.tambah.simpan');
+      Route::get('edit/{id}', 'edit')->name('kategori.edit');
+      Route::post('edit/{id}', 'update')->name('kategori.tambah.update');
+      Route::get('hapus/{id}', 'hapus')->name('kategori.hapus');
+    }); 
 
   });
 

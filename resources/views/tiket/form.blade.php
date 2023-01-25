@@ -21,9 +21,14 @@
                         <input type="text" class="form-control" id="judul_film" name="judul_film" value="{{ isset($tiket) ? $tiket->judul_film : '' }}">
                     </div>
                     <div class="form-group">
-                        <label for="kategori_film">Kategori Film</label>
-                        <input type="text" class="form-control" id="kategori_film" name="kategori_film" value="{{ isset($tiket) ? $tiket->kategori_film : '' }}">
-                    </div>
+                    <label for="id_kategori">Kategori Barang</label>
+							<select name="id_kategori" id="id_kategori" class="custom-select">
+								<option value="" selected disabled hidden>-- Pilih Kategori Film --</option>
+								@foreach ($kategori as $row)
+									<option value="{{ $row->id }}" {{ isset($tiket) ? ($tiket->id_kategori == $row->id ? 'selected' : '') : '' }}>{{ $row->nama }}</option>
+								@endforeach
+							</select>
+            </div>
                     <div class="form-group">
                         <label for="nomor_kursi">Nomor Kursi</label>
                         <input type="text" class="form-control" id="nomor_kursi" name="nomor_kursi" value="{{ isset($tiket) ? $tiket->nomor_kursi : '' }}">

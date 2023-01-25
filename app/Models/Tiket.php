@@ -11,5 +11,10 @@ class Tiket extends Model
 
     protected $table = "tiket";
 
-    protected $fillable = ['kode_tiket', 'judul_film', 'kategori_film', 'nomor_kursi', 'jumlah_tiket', 'harga'];
+    protected $fillable = ['kode_tiket', 'judul_film', 'id_kategori', 'nomor_kursi', 'jumlah_tiket', 'harga'];
+
+    public function kategori()
+	{
+		return $this->belongsTo(Kategori::class, 'id_kategori');
+	}
 }

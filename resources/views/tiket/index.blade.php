@@ -30,7 +30,7 @@
                                         <th>{{ $no++ }}</th>
                                         <td>{{ $row->kode_tiket }}</td>
                                         <td>{{ $row->judul_film}}</td>
-                                        <td>{{ $row->kategori_film}}</td>
+                                        <td>{{ $row->kategori->nama}}</td>
                                         <td>{{ $row->nomor_kursi}}</td>
                                         <td>{{ $row->jumlah_tiket }}</td>
                                         <td>{{ $row->harga }}</td>

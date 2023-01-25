@@ -21,7 +21,18 @@
             <li class="nav-item active">
                 <a class="nav-link" href="{{ route('tiket') }}">
                     <i class="fas fa-ticket-alt"></i>
-                    <span>Tiket</span></a>
+                    <span>Input Data Tiket</span></a>
+
+            </li><li class="nav-item active">
+                <a class="nav-link" href="{{ route('kategori') }}">
+                    <i class="fas fa-film"></i>
+                    <span>Input Data Film</span></a>
+            </li>
+            
+            </li><li class="nav-item active">
+                <a class="nav-link" href="{{ route('login') }}">
+                    <i class="fas fa-power-off"></i>
+                    <span>Log Out</span></a>
             </li>
 
 
